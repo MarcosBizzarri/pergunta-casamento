@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quer casar?</title>
+    <style>
+        #container {
+            position: relative;
+            text-align: center;
+            font-size: 24px;
+        }
+
+        #naoButton {
+            position: absolute;
+            left: 50px;
+            top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <button id="simButton">Sim</button>
+        <button id="naoButton">Não</button>
+    </div>
+
+    <script>
+        const naoButton = document.getElementById('naoButton');
+        const simButton = document.getElementById('simButton');
+        let isDating = false;
+
+        naoButton.addEventListener('click', () => {
+            // Move o botão "Não" para uma posição aleatória
+            const container = document.getElementById('container');
+            const randomX = Math.random() * (container.clientWidth - 100); // 100 é o tamanho aproximado do botão
+            const randomY = Math.random() * (container.clientHeight - 100); // 100 é o tamanho aproximado do botão
+
+            container.style.left = randomX + 'px';
+            container.style.top = randomY + 'px';
+        });
+
+        simButton.addEventListener('click', () => {
+            {
+                    alert('Estamos namorando!');
+                    isDating = true;
+                }
+            }
+        );
+    </script>
+</body>
+</html>
